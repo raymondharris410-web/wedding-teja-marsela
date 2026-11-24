@@ -1,0 +1,537 @@
+/* ================================================
+   RESPONSIVE STYLES - Chinese Wedding Premium
+   ================================================ */
+
+/* ---- Laptop (max-width: 1440px) ---- */
+@media (max-width: 1440px) {
+  .hero-names { font-size: 4rem; }
+  .hero-amp { font-size: 3rem; }
+  .section-title { font-size: 2.5rem; }
+}
+
+/* ---- Tablet Landscape (max-width: 1024px) ---- */
+@media (max-width: 1024px) {
+  :root {
+    --spacing-section: 80px;
+  }
+
+  .hero-names { font-size: 3.5rem; }
+  .hero-amp { font-size: 2.5rem; }
+
+  .couple-container { gap: 20px; }
+  .couple-card { padding: 20px; }
+  .couple-photo-wrapper { width: 200px; height: 200px; }
+
+  .events-container { gap: 20px; }
+  .event-card { padding: 30px 20px; }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .bible-card { padding: 40px 30px; }
+
+  .timeline { max-width: 700px; }
+}
+
+/* ---- Tablet Portrait / Large Mobile (max-width: 768px) ---- */
+@media (max-width: 768px) {
+  :root {
+    --spacing-section: 60px;
+  }
+
+  /* ---- Navbar ---- */
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+
+  /* ---- Cover ---- */
+  .cover-content {
+    padding: 30px 20px;
+    max-width: 90%;
+    width: 90%;
+  }
+  .cover-names { font-size: 2.2rem; }
+  .cover-name-groom,
+  .cover-name-bride { font-size: inherit; }
+  .cover-amp-large { font-size: 1.8rem; margin: 5px 0; }
+  .cover-subtitle { font-size: 1.2rem; }
+  .cover-date { font-size: 0.75rem; letter-spacing: 2px; }
+  .cover-monogram { font-size: 1.6rem; }
+  .cover-monogram span { font-size: inherit; }
+  .cover-guest-name { font-size: 1.2rem; }
+  .cover-invitation-text { font-size: 0.8rem; }
+  .cover-btn {
+    padding: 12px 28px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  /* Cover inner frame tighter */
+  .cover-content::before { inset: 5px; }
+
+  /* Lanterns smaller on tablet */
+  .hanging-lantern { font-size: 2.2rem; }
+  .lantern-small { font-size: 1.5rem; }
+
+  /* Double happiness smaller */
+  .double-happiness { font-size: 4rem; }
+
+  /* ---- Hero ---- */
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .hero-content { padding: 0 20px; }
+  .hero-monogram { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.3rem; }
+  .hero-names {
+    font-size: 2.8rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hero-amp {
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+  .hero-date {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  /* ---- Countdown ---- */
+  .countdown-container {
+    gap: 12px;
+  }
+  .countdown-flip {
+    padding: 12px 15px;
+    min-width: 65px;
+  }
+  .countdown-value { font-size: 2rem; }
+  .countdown-label { font-size: 0.7rem; }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 80%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* ---- Section Headers ---- */
+  .section-header { margin-bottom: 40px; }
+  .section-title { font-size: 2.2rem; }
+  .section-subtitle { font-size: 1.2rem; }
+
+  /* ---- Bible ---- */
+  .bible-card {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+  .bible-text { font-size: 1.3rem; line-height: 1.7; }
+  .bible-icon { font-size: 2rem; }
+
+  /* ---- Couple ---- */
+  .couple-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .couple-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .couple-card:hover { transform: none; }
+  .couple-photo-wrapper { width: 180px; height: 180px; }
+  .couple-name { font-size: 1.7rem; }
+  .couple-divider { margin: 10px 0; }
+  .couple-divider .couple-amp { font-size: 3rem; }
+
+  /* ---- Timeline ---- */
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100% !important;
+    left: 0 !important;
+    padding-left: 60px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    left: 0 !important;
+  }
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 0 !important;
+    right: auto !important;
+  }
+  .timeline-dot {
+    width: 35px;
+    height: 35px;
+  }
+  .timeline-content { padding: 18px; }
+  .timeline-title { font-size: 1.3rem; }
+
+  /* ---- Events ---- */
+  .events-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .event-title { font-size: 1.6rem; }
+  .event-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-buttons .btn-primary,
+  .event-buttons .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* ---- Gallery ---- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallery-filter { gap: 8px; }
+  .gallery-filter-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* ---- Video ---- */
+  .video-wrapper { margin: 0 15px; }
+
+  /* ---- RSVP ---- */
+  .rsvp-form {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+
+  /* ---- Wishes ---- */
+  .wishes-list { margin: 0 15px; }
+
+  /* ---- Gift ---- */
+  .gift-grid {
+    grid-template-columns: 1fr;
+  }
+  .gift-card { padding: 25px 20px; }
+  .gift-tabs { gap: 10px; }
+
+  /* ---- FAQ ---- */
+  .faq-list { margin: 0 15px; }
+  .faq-question { font-size: 1rem; padding: 16px 0; }
+
+  /* ---- Contact ---- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .contact-card { padding: 25px 20px; }
+  .contact-card:hover { transform: none; }
+
+  /* ---- Footer ---- */
+  .footer { padding: 40px 20px; }
+  .footer-thankyou { font-size: 2rem; }
+  .footer-monogram { font-size: 1.5rem; }
+
+  /* ---- Floating Buttons ---- */
+  .floating-container {
+    bottom: 20px;
+    right: 15px;
+    gap: 10px;
+  }
+  .floating-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  /* ---- Lightbox ---- */
+  .lightbox-close { top: 15px; right: 15px; font-size: 1.5rem; }
+  .lightbox-prev { left: 10px; font-size: 1.5rem; }
+  .lightbox-next { right: 10px; font-size: 1.5rem; }
+
+  /* ---- Toast ---- */
+  .toast-container { width: 90%; }
+  .toast { font-size: 0.85rem; padding: 10px 18px; }
+
+  /* ---- Hero decorative ---- */
+  .hero-decoration .floating { display: none; }
+}
+
+/* ---- Mobile Landscape (max-width: 640px) ---- */
+@media (max-width: 640px) {
+  .countdown-container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .countdown-item {
+    width: calc(50% - 10px);
+  }
+  .countdown-flip {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* ---- Mobile Portrait (max-width: 480px) ---- */
+@media (max-width: 480px) {
+  :root {
+    --spacing-section: 40px;
+  }
+
+  /* ---- Cover ---- */
+  .cover-content {
+    padding: 25px 16px;
+    width: 92%;
+  }
+  .cover-names { font-size: 1.8rem; }
+  .cover-amp-large { font-size: 1.5rem; }
+  .cover-subtitle { font-size: 1rem; }
+  .cover-monogram { font-size: 1.3rem; gap: 6px; }
+  .cover-guest { margin-bottom: 25px; }
+  .cover-btn {
+    padding: 10px 22px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hanging-lantern { font-size: 1.8rem; }
+  .lantern-small { font-size: 1.2rem; }
+  .double-happiness { font-size: 3rem; }
+
+  /* ---- Hero ---- */
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-names { font-size: 2.2rem; }
+  .hero-amp { font-size: 1.6rem; }
+  .hero-monogram { font-size: 1.6rem; }
+  .hero-date { font-size: 0.75rem; letter-spacing: 2px; }
+
+  /* ---- Countdown ---- */
+  .countdown-value { font-size: 1.6rem; }
+  .countdown-flip { padding: 10px 12px; }
+  .countdown-label { font-size: 0.65rem; letter-spacing: 1px; }
+
+  /* ---- Section Headers ---- */
+  .section-title { font-size: 1.8rem; }
+  .section-subtitle { font-size: 1.1rem; }
+  .section-header { margin-bottom: 30px; }
+
+  /* ---- Bible ---- */
+  .bible-text { font-size: 1.1rem; }
+  .bible-icon { font-size: 1.8rem; }
+  .bible-card { padding: 25px 16px; }
+
+  /* ---- Couple ---- */
+  .couple-photo-wrapper { width: 150px; height: 150px; }
+  .couple-name { font-size: 1.5rem; }
+  .couple-nickname { font-size: 0.95rem; }
+  .couple-parents { font-size: 0.85rem; }
+  .couple-bio { font-size: 0.9rem; }
+
+  /* ---- Timeline ---- */
+  .timeline-photo { height: 120px; }
+  .timeline-title { font-size: 1.1rem; }
+  .timeline-content { padding: 15px; }
+  .timeline-date { font-size: 0.75rem; }
+  .timeline-location { font-size: 0.85rem; }
+  .timeline-description { font-size: 0.9rem; }
+
+  /* ---- Events ---- */
+  .event-title { font-size: 1.4rem; }
+  .event-card { padding: 25px 16px; }
+  .event-detail { font-size: 0.9rem; }
+  .event-icon { font-size: 2.5rem; }
+
+  /* ---- Gallery ---- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .gallery-filter-btn { padding: 5px 12px; font-size: 0.75rem; }
+
+  /* ---- RSVP ---- */
+  .rsvp-form { padding: 25px 16px; }
+  .form-input,
+  .form-select,
+  .form-textarea { padding: 12px 15px; font-size: 0.9rem; }
+  .form-label { font-size: 0.85rem; }
+
+  /* ---- Wishes ---- */
+  .wish-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+  }
+  .wish-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .wish-avatar { width: 42px; height: 42px; }
+  .wish-message { font-size: 0.9rem; }
+
+  /* ---- Gift ---- */
+  .gift-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gift-tab { width: 100%; text-align: center; }
+  .gift-card { padding: 20px 16px; }
+  .gift-account-number { font-size: 1rem; letter-spacing: 1px; }
+
+  /* ---- FAQ ---- */
+  .faq-question { font-size: 0.95rem; }
+  .faq-answer p { font-size: 0.9rem; }
+
+  /* ---- Contact ---- */
+  .contact-card { padding: 20px 16px; }
+  .contact-icon { font-size: 1.6rem; }
+  .contact-title { font-size: 1rem; }
+
+  /* ---- Footer ---- */
+  .footer { padding: 30px 16px; }
+  .footer-thankyou { font-size: 1.6rem; }
+  .footer-message { font-size: 0.9rem; }
+  .footer-verse { font-size: 0.9rem; }
+
+  /* ---- Floating Buttons ---- */
+  .floating-container {
+    bottom: 16px;
+    right: 12px;
+    gap: 8px;
+  }
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* ---- Small Mobile (max-width: 375px) ---- */
+@media (max-width: 375px) {
+  .cover-content { padding: 20px 14px; }
+  .cover-names { font-size: 1.5rem; }
+  .cover-amp-large { font-size: 1.2rem; }
+  .cover-subtitle { font-size: 0.9rem; }
+  .cover-date { font-size: 0.7rem; }
+
+  .hero-names { font-size: 1.8rem; }
+  .hero-amp { font-size: 1.3rem; }
+  .hero-subtitle { font-size: 1rem; }
+
+  .countdown-item { width: calc(50% - 6px); }
+  .countdown-value { font-size: 1.4rem; }
+  .countdown-flip { padding: 8px 10px; }
+
+  .section-title { font-size: 1.5rem; }
+
+  .couple-photo-wrapper { width: 130px; height: 130px; }
+  .couple-name { font-size: 1.3rem; }
+
+  .hanging-lantern { font-size: 1.5rem; }
+  .double-happiness { font-size: 2.5rem; }
+
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+}
+
+/* ---- Very Small (max-width: 320px) ---- */
+@media (max-width: 320px) {
+  .cover-names { font-size: 1.3rem; }
+  .cover-monogram { font-size: 1.1rem; }
+  .hero-names { font-size: 1.6rem; }
+  .countdown-value { font-size: 1.2rem; }
+  .section-title { font-size: 1.3rem; }
+}
+
+/* ================================================
+   FIX: iOS Safari 100vh issue
+   ================================================ */
+@supports (-webkit-touch-callout: none) {
+  #cover,
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* ================================================
+   FIX: Parallax on mobile (disable fixed bg)
+   ================================================ */
+@media (max-width: 1024px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+/* ================================================
+   Prefers Reduced Motion
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hanging-lantern { animation: none; }
+  .petal { animation: none; display: none; }
+}
+
+/* ================================================
+   Print Styles
+   ================================================ */
+@media print {
+  .navbar,
+  .floating-container,
+  .hamburger,
+  .mobile-menu,
+  #particle-canvas,
+  .hanging-lantern,
+  .loading-petals,
+  #loading-screen,
+  #cover {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .section { page-break-inside: avoid; }
+}
+
+/* ================================================
+   Landscape Orientation Fix
+   ================================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  #cover {
+    position: absolute;
+    height: auto;
+    min-height: 100vh;
+  }
+  .cover-content { padding: 20px 16px; }
+  .cover-names { font-size: 1.8rem; }
+  .cover-guest { margin-bottom: 15px; }
+
+  .hero { min-height: 100vh; }
+  .hero-names { font-size: 2.5rem; }
+
+  .countdown-container { gap: 10px; }
+  .countdown-flip { padding: 8px 12px; }
+  .countdown-value { font-size: 1.5rem; }
+}

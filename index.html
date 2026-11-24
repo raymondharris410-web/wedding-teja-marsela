@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding of Teja & Marsela | 5 December 2026</title>
+  <meta name="description" content="The Holy Matrimony of Teja Wijaya & Marsela Giovanni - Saturday, 5 December 2026">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tejaandmarsela.com/">
+  <meta property="og:title" content="Wedding of Teja & Marsela">
+  <meta property="og:description" content="We joyfully invite you to celebrate our wedding. Saturday, 5 December 2026">
+  <meta property="og:image" content="https://tejaandmarsela.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Wedding of Teja & Marsela">
+  <meta property="twitter:description" content="We joyfully invite you to celebrate our wedding. Saturday, 5 December 2026">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%23D4AF37' stroke-width='3'/><text x='50' y='55' text-anchor='middle' font-family='serif' font-size='28' fill='%23D4AF37'>T%26M</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- JSON-LD Event schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Wedding of Teja & Marsela",
+    "startDate": "2026-12-05T13:00:00+07:00",
+    "endDate": "2026-12-05T15:00:00+07:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "GBI Haleluya Purwokerto",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Purwokerto",
+        "addressCountry": "ID"
+      }
+    },
+    "description": "The Holy Matrimony of Teja Wijaya and Marsela Giovanni."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Gold Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- 1. LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-monogram">
+        <span class="monogram-letter">T</span>
+        <span class="monogram-ampersand">&</span>
+        <span class="monogram-letter">M</span>
+      </div>
+      <div class="loading-ornament">
+        <svg viewBox="0 0 200 40" class="ornament-svg">
+          <path d="M0,20 Q25,0 50,20 Q75,40 100,20 Q125,0 150,20 Q175,40 200,20" stroke="#D4AF37" fill="none" stroke-width="1.5" class="ornament-path"/>
+        </svg>
+      </div>
+      <p class="loading-text">Preparing Your Invitation</p>
+      <div class="loading-bar-container">
+        <div class="loading-bar"></div>
+      </div>
+    </div>
+    <!-- Floating Chinese elements -->
+    <div class="loading-petals">
+      <div class="petal petal-1">🏮</div>
+      <div class="petal petal-2">✦</div>
+      <div class="petal petal-3">🏮</div>
+      <div class="petal petal-4">✦</div>
+      <div class="petal petal-5">🏮</div>
+    </div>
+  </div>
+
+  <!-- 2. COVER -->
+  <div id="cover">
+    <div class="cover-overlay"></div>
+    
+    <!-- Chinese Lanterns -->
+    <div class="hanging-lantern lantern-left">🏮</div>
+    <div class="hanging-lantern lantern-right">🏮</div>
+    
+    <!-- Double Happiness Watermarks -->
+    <div class="double-happiness double-happiness-left">囍</div>
+    <div class="double-happiness double-happiness-right">囍</div>
+    <div class="cover-content">
+      <div class="cover-monogram">
+        <span>T</span><span class="cover-amp">&</span><span>M</span>
+      </div>
+      <p class="cover-subtitle">The Holy Matrimony Of</p>
+      <h1 class="cover-names">
+        <span class="cover-name-groom">Teja Wijaya</span>
+        <span class="cover-amp-large">囍</span>
+        <span class="cover-name-bride">Marsela Giovanni</span>
+      </h1>
+      <p class="cover-date">Saturday, 5 December 2026</p>
+      <div class="cover-divider"></div>
+      <div class="cover-guest">
+        <p class="cover-dear">Dear,</p>
+        <p class="cover-guest-name" id="guest-name">Beloved Guest</p>
+        <p class="cover-invitation-text">"We joyfully invite you to celebrate our wedding."</p>
+      </div>
+      <button class="cover-btn" id="cover-btn">
+        <span class="cover-btn-icon">🏮</span>
+        <span>Open Invitation</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. NAVBAR -->
+  <nav class="navbar" id="navbar" style="opacity: 0;">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">T & M</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#bride-groom" class="nav-link">Bride & Groom</a></li>
+        <li><a href="#bible-verse" class="nav-link">Bible Verse</a></li>
+        <li><a href="#wedding-event" class="nav-link">Wedding Event</a></li>
+        <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        <li><a href="#guest-wishes" class="nav-link">Wishes</a></li>
+        <li><a href="#wedding-gift" class="nav-link">Gift</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-menu-list">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#bride-groom" class="mobile-link">Bride & Groom</a></li>
+        <li><a href="#bible-verse" class="mobile-link">Bible Verse</a></li>
+        <li><a href="#wedding-event" class="mobile-link">Wedding Event</a></li>
+        <li><a href="#rsvp" class="mobile-link">RSVP</a></li>
+        <li><a href="#guest-wishes" class="mobile-link">Wishes</a></li>
+        <li><a href="#wedding-gift" class="mobile-link">Gift</a></li>
+        <li><a href="#faq" class="mobile-link">FAQ</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 4. HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    
+    <!-- Chinese Lanterns -->
+    <div class="hanging-lantern lantern-left lantern-small">🏮</div>
+    <div class="hanging-lantern lantern-right lantern-small">🏮</div>
+    
+    <div class="hero-content">
+      <div class="hero-monogram reveal">
+        <span>T</span><span>&</span><span>M</span>
+      </div>
+      <h2 class="hero-subtitle reveal reveal-delay-1">We Are Getting Married</h2>
+      <h1 class="hero-names reveal reveal-delay-2">
+        <span class="hero-name">Teja</span>
+        <span class="hero-amp">&</span>
+        <span class="hero-name">Marsela</span>
+      </h1>
+      <p class="hero-date reveal reveal-delay-3">Saturday, 5 December 2026</p>
+      
+      <!-- Countdown -->
+      <div class="countdown-container reveal reveal-delay-4" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-flip">
+            <div class="countdown-value" data-type="days">000</div>
+          </div>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-flip">
+            <div class="countdown-value" data-type="hours">00</div>
+          </div>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-flip">
+            <div class="countdown-value" data-type="minutes">00</div>
+          </div>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-flip">
+            <div class="countdown-value" data-type="seconds">00</div>
+          </div>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <div class="hero-buttons reveal reveal-delay-5">
+        <a href="#rsvp" class="btn-primary">RSVP Now</a>
+        <a href="#wedding-event" class="btn-secondary">View Location</a>
+      </div>
+    </div>
+    <!-- Decorative floating elements -->
+    <div class="hero-decoration">
+      <div class="floating floating-1" style="position: absolute; top: 15%; left: 8%; color: var(--gold-primary); font-size: 2.5rem; opacity: 0.15;">囍</div>
+      <div class="floating floating-2" style="position: absolute; top: 65%; right: 10%; color: var(--gold-primary); font-size: 2rem; opacity: 0.1;">🏮</div>
+      <div class="floating floating-3" style="position: absolute; top: 35%; right: 20%; color: var(--gold-primary); font-size: 1.5rem; opacity: 0.12;">✦</div>
+      <div class="double-happiness" style="bottom: 10%; left: 5%; font-size: 8rem; opacity: 0.03;">囍</div>
+    </div>
+  </section>
+
+  <!-- 5. BIBLE VERSE -->
+  <section id="bible-verse" class="section section-ivory">
+    <div class="container">
+      <div class="bible-card reveal reveal-up">
+        <div class="bible-ornament-top">
+          <svg viewBox="0 0 100 20" style="width: 150px; margin-bottom: 20px;"><path d="M0,10 Q12.5,0 25,10 Q37.5,20 50,10 Q62.5,0 75,10 Q87.5,20 100,10" stroke="#D4AF37" fill="none" stroke-width="1"/></svg>
+        </div>
+        <div class="bible-icon">✟</div>
+        <blockquote class="bible-text">
+          "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres. Love never fails."
+        </blockquote>
+        <p class="bible-reference">— 1 Corinthians 13:4–8</p>
+        <div class="bible-ornament-bottom">
+          <svg viewBox="0 0 100 20" style="width: 150px; margin-top: 20px;"><path d="M0,10 Q12.5,0 25,10 Q37.5,20 50,10 Q62.5,0 75,10 Q87.5,20 100,10" stroke="#D4AF37" fill="none" stroke-width="1"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BRIDE & GROOM -->
+  <section id="bride-groom" class="section">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">The Couple</p>
+        <h2 class="section-title">Bride & Groom</h2>
+        <div class="divider-ornament"></div>
+      </div>
+      <div class="couple-container">
+        <!-- Groom -->
+        <div class="couple-card reveal reveal-left">
+          <div class="couple-photo-wrapper">
+            <div class="couple-photo" id="groom-photo">
+              <!-- Placeholder gradient -->
+              <div class="photo-placeholder groom-placeholder">
+                <span>T</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="couple-name">Teja Wijaya</h3>
+          <p class="couple-nickname">"Teja"</p>
+          <p class="couple-parents">Putra dari<br>Bpk. Sigit Wijaya (Oey Tjiong Tek) &<br>Ibu Sie Ing Hwa</p>
+          <p class="couple-bio">A faithful man who believes that God has prepared the perfect partner. His patience and devotion have led him to this beautiful moment.</p>
+        </div>
+
+        <!-- Ampersand -->
+        <div class="couple-divider reveal reveal-zoom reveal-delay-2">
+          <span class="couple-amp">&</span>
+        </div>
+
+        <!-- Bride -->
+        <div class="couple-card reveal reveal-right">
+          <div class="couple-photo-wrapper">
+            <div class="couple-photo" id="bride-photo">
+              <div class="photo-placeholder bride-placeholder">
+                <span>M</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="couple-name">Marsela Giovanni</h3>
+          <p class="couple-nickname">"Marsela"</p>
+          <p class="couple-parents">Putri dari<br>Bpk. Andi Novianto (Kwee Giok An) &<br>Ibu Mellyana Irawati (Meylian)</p>
+          <p class="couple-bio">A graceful woman full of love and faith. She believes that every love story is beautiful, but theirs is her favorite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 7. WEDDING EVENT -->
+  <section id="wedding-event" class="section section-scenic" style="background-image: url('assets/images/chinese_temple.png');">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Save The Date</p>
+        <h2 class="section-title">Wedding Event</h2>
+        <div class="divider-ornament"></div>
+      </div>
+      <div class="events-container">
+        <!-- Holy Matrimony -->
+        <div class="event-card glass reveal reveal-up" style="max-width: 600px; margin: 0 auto;">
+          <div class="event-icon">⛪</div>
+          <h3 class="event-title">Pemberkatan Nikah</h3>
+          <div class="event-divider"></div>
+          <div class="event-details">
+            <div class="event-detail">
+              <span class="event-detail-icon">📅</span>
+              <span>Sabtu, 5 Desember 2026</span>
+            </div>
+            <div class="event-detail">
+              <span class="event-detail-icon">🕐</span>
+              <span>13:00 WIB</span>
+            </div>
+            <div class="event-detail">
+              <span class="event-detail-icon">📍</span>
+              <span>GBI Haleluya Purwokerto</span>
+            </div>
+            <div class="event-detail">
+              <span class="event-detail-icon">👔</span>
+              <span>Dress Code: Formal</span>
+            </div>
+          </div>
+          <div class="event-buttons">
+            <a href="https://maps.google.com/?q=GBI+Haleluya+Purwokerto" target="_blank" class="btn-primary btn-small">📍 Google Maps</a>
+            <a href="javascript:void(0)" class="btn-secondary btn-small" onclick="window.WeddingApp.addToCalendar('matrimony')">📅 Add to Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 8. RSVP -->
+  <section id="rsvp" class="section section-ivory">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Konfirmasi Kehadiran</p>
+        <h2 class="section-title">RSVP</h2>
+        <div class="divider-ornament"></div>
+        <p class="section-description" style="margin-top: 15px; color: var(--text-secondary);">Mohon konfirmasi kehadiran Anda dengan mengisi formulir di bawah ini.</p>
+      </div>
+      <form class="rsvp-form reveal reveal-up" id="rsvp-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="rsvp-nama">Nama Lengkap *</label>
+          <input type="text" class="form-input" id="rsvp-nama" name="nama" placeholder="Masukkan nama lengkap Anda" required minlength="2">
+          <span class="form-error" id="error-nama"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="rsvp-whatsapp">Nomor WhatsApp</label>
+          <input type="tel" class="form-input" id="rsvp-whatsapp" name="whatsapp" placeholder="Contoh: 08123456789">
+          <span class="form-error" id="error-whatsapp"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Konfirmasi Kehadiran *</label>
+          <div class="form-radio-group">
+            <label class="form-radio">
+              <input type="radio" name="konfirmasi" value="hadir" required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">✓ Hadir</span>
+            </label>
+            <label class="form-radio">
+              <input type="radio" name="konfirmasi" value="tidak_hadir">
+              <span class="radio-custom"></span>
+              <span class="radio-label">✗ Tidak Dapat Hadir</span>
+            </label>
+          </div>
+          <span class="form-error" id="error-konfirmasi"></span>
+        </div>
+        <div class="form-group" id="guest-count-group" style="display: none;">
+          <label class="form-label" for="rsvp-jumlah">Jumlah Tamu yang Hadir *</label>
+          <select class="form-select" id="rsvp-jumlah" name="jumlah_tamu">
+            <option value="" disabled selected>Pilih jumlah tamu</option>
+            <option value="1">1 Orang</option>
+            <option value="2">2 Orang</option>
+            <option value="3">3 Orang</option>
+            <option value="4">4 Orang</option>
+            <option value="5">5 Orang</option>
+          </select>
+          <span class="form-error" id="error-jumlah"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="rsvp-ucapan">Ucapan & Doa</label>
+          <textarea class="form-textarea" id="rsvp-ucapan" name="ucapan" rows="4" placeholder="Tuliskan ucapan dan doa untuk kedua mempelai..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full">
+          <span>Kirim RSVP</span>
+        </button>
+      </form>
+      <!-- Success Message -->
+      <div class="rsvp-success glass" id="rsvp-success" style="max-width: 600px; margin: 0 auto; border-radius: 12px;">
+        <div class="success-icon" style="font-size: 4rem; margin-bottom: 20px;">🎊</div>
+        <h3 class="success-title" style="font-size: 2rem; margin-bottom: 15px; color: var(--gold-primary);">Terima Kasih!</h3>
+        <p class="success-text" style="color: var(--text-secondary);">RSVP Anda telah kami terima. Kami menantikan kehadiran Anda di hari bahagia kami!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. GUEST WISHES -->
+  <section id="guest-wishes" class="section">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Words of Love</p>
+        <h2 class="section-title">Guest Wishes</h2>
+        <div class="divider-ornament"></div>
+      </div>
+      <div class="wishes-list" id="wishes-list">
+        <!-- Populated by JS -->
+      </div>
+      <div class="wishes-pagination" id="wishes-pagination">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. WEDDING GIFT -->
+  <section id="wedding-gift" class="section section-ivory">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Your Blessing</p>
+        <h2 class="section-title">Wedding Gift</h2>
+        <div class="divider-ornament"></div>
+        <p class="section-description" style="max-width: 600px; margin: 15px auto 0; color: var(--text-secondary);">Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we have provided the following options.</p>
+      </div>
+      
+      <!-- Bank Transfer -->
+      <div class="gift-grid">
+        <div class="gift-card reveal reveal-up">
+          <div class="gift-bank-logo">BCA</div>
+          <p class="gift-account-name">Marsela Geovani</p>
+          <p class="gift-account-number" id="bca-number">2390 5973 58</p>
+          <button class="gift-copy-btn btn-secondary btn-small" data-copy="2390597358" onclick="window.WeddingApp.copyGift(this)">📋 Copy Number</button>
+        </div>
+        <div class="gift-card reveal reveal-up" style="transition-delay: 0.1s">
+          <div class="gift-bank-logo">BNI</div>
+          <p class="gift-account-name">Teja Wijaya</p>
+          <p class="gift-account-number" id="bni-number">1910 3427 05</p>
+          <button class="gift-copy-btn btn-secondary btn-small" data-copy="1910342705" onclick="window.WeddingApp.copyGift(this)">📋 Copy Number</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Information</p>
+        <h2 class="section-title">FAQ</h2>
+        <div class="divider-ornament"></div>
+      </div>
+      <div class="faq-list reveal reveal-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the dress code?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>Formal attire is recommended. Please avoid wearing white as it is reserved for the bride.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is parking available?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, the venue provides parking space. Please arrive early to ensure a parking spot.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I bring children?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>We love your little ones! Children are welcome at the ceremony. Please include them in your guest count when submitting your RSVP.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Will there be a live streaming?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! For those who cannot attend in person, we will provide a live streaming link. The link will be shared via WhatsApp one day before the ceremony.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can I send a gift?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your presence is the greatest gift! If you wish to send a gift, please visit our Wedding Gift section above for bank transfer details.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>When is the RSVP deadline?</span>
+            <span class="faq-chevron">❯</span>
+          </button>
+          <div class="faq-answer">
+            <p>Please confirm your attendance by November 21, 2026 (two weeks before the wedding) so we can finalize our preparations. Thank you for your cooperation!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CONTACT -->
+  <section id="contact" class="section section-ivory">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <p class="section-subtitle">Get in Touch</p>
+        <h2 class="section-title">Contact</h2>
+        <div class="divider-ornament"></div>
+      </div>
+      <div class="contact-grid">
+        <a href="https://wa.me/6282324620607" target="_blank" class="contact-card glass reveal reveal-up">
+          <div class="contact-icon">💬</div>
+          <h4 class="contact-title">WhatsApp 1</h4>
+          <p class="contact-detail">+62 823-2462-0607</p>
+        </a>
+        <a href="https://wa.me/6287871581354" target="_blank" class="contact-card glass reveal reveal-up" style="transition-delay: 0.1s">
+          <div class="contact-icon">💬</div>
+          <h4 class="contact-title">WhatsApp 2</h4>
+          <p class="contact-detail">+62 878-7158-1354</p>
+        </a>
+        <div class="contact-card glass reveal reveal-up" style="transition-delay: 0.2s">
+          <div class="contact-icon">👨‍👩‍👧</div>
+          <h4 class="contact-title">Family Contact (Groom)</h4>
+          <p class="contact-detail">Bpk. Sigit Wijaya (Oey Tjiong Tek)<br>Ibu Sie Ing Hwa</p>
+        </div>
+        <div class="contact-card glass reveal reveal-up" style="transition-delay: 0.3s">
+          <div class="contact-icon">👨‍👩‍👧</div>
+          <h4 class="contact-title">Family Contact (Bride)</h4>
+          <p class="contact-detail">Bpk. Andi Novianto (Kwee Giok An)<br>Ibu Mellyana Irawati (Meylian)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-monogram reveal reveal-up">
+          <span>T</span><span>&</span><span>M</span>
+        </div>
+        <h3 class="footer-thankyou reveal reveal-up" style="transition-delay: 0.1s">Thank You</h3>
+        <p class="footer-message reveal reveal-up" style="transition-delay: 0.2s">For the honor of your presence at our celebration of love</p>
+        <div class="footer-verse reveal reveal-up" style="transition-delay: 0.3s">
+          <p>"And now these three remain: faith, hope and love. But the greatest of these is love."</p>
+          <span style="font-style: normal; font-family: var(--font-body); font-size: 0.9rem; margin-top: 10px; display: inline-block;">— 1 Corinthians 13:13</span>
+        </div>
+        <div class="footer-divider reveal reveal-up" style="transition-delay: 0.4s"></div>
+        <p class="footer-copyright reveal reveal-up" style="transition-delay: 0.5s; font-size: 0.9rem; color: #888;">
+          © 2026 Teja & Marsela Wedding. Made with ❤️
+        </p>
+        <div class="footer-hearts reveal reveal-up" style="transition-delay: 0.6s; margin-top: 15px;">
+          <span class="heart heart-1" style="animation: pulse 1s infinite">♥</span>
+          <span class="heart heart-2" style="animation: pulse 1.2s infinite">♥</span>
+          <span class="heart heart-3" style="animation: pulse 1.4s infinite">♥</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 14. FLOATING BUTTONS -->
+  <div class="floating-container" id="floating-container">
+    <button class="floating-btn floating-music" id="btn-music" aria-label="Toggle Music" title="Toggle Music">
+      🎵
+    </button>
+    <a href="https://wa.me/6282324620607" target="_blank" class="floating-btn floating-wa" aria-label="WhatsApp" title="WhatsApp">
+      💬
+    </a>
+    <button class="floating-btn floating-top" id="btn-top" aria-label="Back to Top" title="Back to Top">
+      ↑
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music/wedding-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts (load order matters) -->
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/wishes.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

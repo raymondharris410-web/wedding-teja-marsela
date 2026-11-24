@@ -1,0 +1,135 @@
+/* Loading Screen - Chinese Wedding Theme */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #3D0C0C 0%, #1A0505 60%, #0D0202 100%);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+}
+
+#loading-screen.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.loading-monogram {
+  font-family: var(--font-elegant);
+  font-size: 4rem;
+  color: var(--gold-primary);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: monogramReveal 1s ease-out forwards;
+  position: relative;
+}
+
+/* Double frame for Chinese style */
+.loading-monogram::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.monogram-ampersand {
+  font-size: 2.5rem;
+  margin: 0 5px;
+}
+
+.loading-ornament {
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+.ornament-path {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: drawOrnament 2s ease-in-out forwards 0.5s;
+}
+
+@keyframes drawOrnament {
+  to { stroke-dashoffset: 0; }
+}
+
+.loading-text {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--gold-light, #F0D78C);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in forwards 1s;
+  opacity: 0;
+}
+
+.loading-bar-container {
+  width: 250px;
+  height: 2px;
+  background-color: rgba(212, 175, 55, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--red-primary, #C41E3A), var(--gold-primary, #D4AF37));
+  width: 0%;
+  animation: loadingBar 3s ease-in-out forwards;
+}
+
+.loading-petals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+  color: var(--gold-primary, #D4AF37);
+  animation: petalFall 6s linear infinite;
+}
+
+.petal-1 { left: 10%; animation-delay: 0s; font-size: 1.8rem; }
+.petal-2 { left: 30%; animation-delay: 2s; font-size: 1rem; }
+.petal-3 { left: 50%; animation-delay: 1s; font-size: 1.5rem; }
+.petal-4 { left: 70%; animation-delay: 3s; font-size: 1rem; }
+.petal-5 { left: 90%; animation-delay: 1.5s; font-size: 1.6rem; }
+
+@keyframes petalFall {
+  0% { transform: translateY(-50px) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  50% { transform: translateY(50vh) rotate(180deg) translateX(50px); opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(100vh) rotate(360deg) translateX(-50px); opacity: 0; }
+}
