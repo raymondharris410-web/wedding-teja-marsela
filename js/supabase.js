@@ -32,8 +32,7 @@ window.SupabaseClient = (function() {
   const headers = (useAuth = false) => {
     const h = {
       'apikey': key,
-      'Content-Type': 'application/json',
-      'Prefer': 'return=representation'
+      'Content-Type': 'application/json'
     };
     if (useAuth && accessToken) {
       h['Authorization'] = `Bearer ${accessToken}`;
@@ -46,16 +45,23 @@ window.SupabaseClient = (function() {
   // ---- CRUD Operations ----
 
   const insert = async (table, data) => {
+    const h = headers(false);
+    h['Prefer'] = 'return=minimal';
+
     const res = await fetch(`${url}/rest/v1/${table}`, {
       method: 'POST',
-      headers: headers(),
+      headers: h,
       body: JSON.stringify(data)
     });
+
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err.message || `Insert failed (${res.status})`);
+      const msg = err.message || err.error_description || `Gagal menyimpan data (${res.status})`;
+      throw new Error(msg);
     }
-    return res.json();
+
+    const text = await res.text();
+    return text ? JSON.parse(text) : { success: true };
   };
 
   const select = async (table, params = {}, useAuth = false) => {
@@ -72,13 +78,17 @@ window.SupabaseClient = (function() {
       });
     }
 
+    const h = headers(useAuth);
+    h['Prefer'] = 'count=exact';
+
     const res = await fetch(`${url}/rest/v1/${table}?${query.toString()}`, {
       method: 'GET',
-      headers: { ...headers(useAuth), 'Prefer': 'count=exact' }
+      headers: h
     });
+
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err.message || `Select failed (${res.status})`);
+      throw new Error(err.message || err.error_description || `Gagal mengambil data (${res.status})`);
     }
 
     const totalCount = res.headers.get('content-range');

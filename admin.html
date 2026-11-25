@@ -291,7 +291,8 @@
       try {
         const [rsvpResult, wishesResult] = await Promise.all([
           window.SupabaseClient.select('rsvp', { select: '*', order: 'created_at.desc' }, true),
-          window.SupabaseClient.select('wishes', { select: '*', order: 'created_at.desc' }, true)
+          // Wishes can be read with public anon key or authenticated
+          window.SupabaseClient.select('wishes', { select: '*', order: 'created_at.desc' }, false)
         ]);
 
         allRsvp = rsvpResult.data || [];
@@ -303,8 +304,14 @@
         filterAndRenderWishes();
       } catch (err) {
         console.error('Load data error:', err);
-        document.getElementById('recent-rsvp-list').innerHTML =
-          '<p class="empty-state error">Gagal memuat data. Pastikan Anda sudah login.</p>';
+        const errMsg = err.message || '';
+        if (errMsg.includes('401') || errMsg.includes('JWT') || errMsg.includes('token') || errMsg.includes('Gagal mengambil data (401)')) {
+          handleLogout();
+          document.getElementById('login-error').textContent = 'Sesi login telah berakhir. Silakan login kembali.';
+        } else {
+          document.getElementById('recent-rsvp-list').innerHTML =
+            `<p class="empty-state error">Gagal memuat data: ${esc(errMsg || 'Periksa koneksi database.')}</p>`;
+        }
       }
     }
 

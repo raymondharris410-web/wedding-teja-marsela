@@ -59,15 +59,23 @@ window.WeddingRSVP = (function() {
     try {
       // Check if Supabase is configured
       if (window.SupabaseClient && window.SupabaseClient.isConfigured()) {
-        // Save to Supabase
+        // Save to Supabase rsvp table
         await window.SupabaseClient.insert('rsvp', rsvpData);
 
         // Also save wish to wishes table if message provided
         if (rsvpData.message) {
-          await window.SupabaseClient.insert('wishes', {
-            guest_name: rsvpData.guest_name,
-            message: rsvpData.message
-          });
+          try {
+            await window.SupabaseClient.insert('wishes', {
+              guest_name: rsvpData.guest_name,
+              message: rsvpData.message
+            });
+          } catch (wishErr) {
+            console.warn('[RSVP] Failed to save wish to wishes table:', wishErr);
+          }
+          // Refresh wishes list live immediately
+          if (window.WeddingWishes && window.WeddingWishes.refresh) {
+            window.WeddingWishes.refresh();
+          }
         }
       } else {
         // Fallback to localStorage

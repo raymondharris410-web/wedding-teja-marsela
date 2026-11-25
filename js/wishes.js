@@ -11,6 +11,12 @@ window.WeddingWishes = (function() {
   const init = async () => {
     await loadWishes();
     render();
+
+    // Auto-refresh wishes every 20 seconds for real-time live updates
+    setInterval(async () => {
+      await loadWishes();
+      render();
+    }, 20000);
   };
 
   const loadWishes = async () => {
@@ -21,28 +27,23 @@ window.WeddingWishes = (function() {
           order: 'created_at.desc',
           limit: 100
         });
-        wishesData = (data && data.length > 0) ? data : getDefaultWishes();
+        wishesData = data || [];
       } else {
         // Fallback: localStorage
         const saved = window.WeddingUtils.getLocalStorage('wedding_wishes');
-        wishesData = saved && saved.length > 0 ? saved : getDefaultWishes();
+        wishesData = saved || [];
       }
     } catch (err) {
       console.error('[Wishes] Load error:', err);
-      wishesData = getDefaultWishes();
+      const saved = window.WeddingUtils.getLocalStorage('wedding_wishes');
+      wishesData = saved || [];
     }
   };
 
-  const getDefaultWishes = () => {
-    const now = Date.now();
-    return [
-      { id: 1, guest_name: 'Sarah Putri', message: 'Selamat menempuh hidup baru! Semoga menjadi keluarga yang diberkati Tuhan. God bless! 🙏', created_at: new Date(now - 1000 * 5).toISOString() },
-      { id: 2, guest_name: 'Budi Santoso', message: 'Happy Wedding Teja & Marsela! Bahagia selalu ya! 💒', created_at: new Date(now - 1000 * 15).toISOString() },
-      { id: 3, guest_name: 'Amanda Christine', message: 'Tuhan memberkati pernikahan kalian. Semoga cinta kalian kekal hingga akhir hayat 💕', created_at: new Date(now - 1000 * 30).toISOString() },
-      { id: 4, guest_name: 'David Wijaya', message: 'Congratulations bro! Finally! Semoga bahagia selalu! 🎉', created_at: new Date(now - 1000 * 45).toISOString() },
-      { id: 5, guest_name: 'Jessica Tanujaya', message: 'So happy for you both! May God shower you with endless blessings! ✨', created_at: new Date(now - 1000 * 50).toISOString() },
-      { id: 6, guest_name: 'Michael Pranata', message: 'Best wishes for the lovely couple! Semoga menjadi keluarga Kristen yang kokoh 🙌', created_at: new Date(now - 1000 * 55).toISOString() }
-    ];
+  const refresh = async () => {
+    await loadWishes();
+    currentPage = 1;
+    render();
   };
 
   const render = () => {
@@ -53,7 +54,13 @@ window.WeddingWishes = (function() {
     listContainer.innerHTML = '';
 
     if (wishesData.length === 0) {
-      listContainer.innerHTML = '<p style="text-align:center; color: var(--text-secondary); padding: 40px 0;">Belum ada ucapan. Jadilah yang pertama memberikan doa! 🙏</p>';
+      listContainer.innerHTML = `
+        <div class="empty-wishes-box" style="text-align:center; padding: 40px 20px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(212,175,55,0.3); border-radius: 16px; max-width: 500px; margin: 0 auto;">
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 12px;">💌</span>
+          <p style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--gold-primary); margin-bottom: 8px;">Belum Ada Ucapan</p>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Jadilah yang pertama memberikan doa restu untuk Teja & Marsela melalui formulir RSVP di atas! ✨</p>
+        </div>
+      `;
       if (paginationContainer) paginationContainer.innerHTML = '';
       return;
     }
@@ -124,5 +131,5 @@ window.WeddingWishes = (function() {
     render();
   };
 
-  return { init, addWishLocal };
+  return { init, addWishLocal, refresh };
 })();
