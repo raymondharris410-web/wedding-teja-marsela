@@ -23,14 +23,24 @@ CREATE TABLE IF NOT EXISTS wishes (
 );
 
 -- =====================================================
+-- GRANT TABLE PERMISSIONS
+-- =====================================================
+GRANT USAGE ON SCHEMA public TO anon, authenticated;
+
+GRANT INSERT ON TABLE public.rsvp TO anon;
+GRANT SELECT, INSERT, DELETE ON TABLE public.rsvp TO authenticated;
+
+GRANT SELECT, INSERT ON TABLE public.wishes TO anon;
+GRANT SELECT, INSERT, DELETE ON TABLE public.wishes TO authenticated;
+
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO anon, authenticated;
+
+-- =====================================================
 -- ROW LEVEL SECURITY (RLS)
 -- =====================================================
-
--- Enable RLS on both tables
 ALTER TABLE rsvp ENABLE ROW LEVEL SECURITY;
 ALTER TABLE wishes ENABLE ROW LEVEL SECURITY;
 
--- Drop old policies if they exist
 DROP POLICY IF EXISTS "Anyone can submit RSVP" ON rsvp;
 DROP POLICY IF EXISTS "Admin can read all RSVP" ON rsvp;
 DROP POLICY IF EXISTS "Admin can delete RSVP" ON rsvp;
@@ -38,40 +48,34 @@ DROP POLICY IF EXISTS "Anyone can submit wishes" ON wishes;
 DROP POLICY IF EXISTS "Anyone can read wishes" ON wishes;
 DROP POLICY IF EXISTS "Admin can delete wishes" ON wishes;
 
--- RSVP Policies:
+-- RSVP Policies
 CREATE POLICY "Anyone can submit RSVP"
-  ON rsvp FOR INSERT
-  TO anon, authenticated
+  ON rsvp FOR INSERT TO anon, authenticated
   WITH CHECK (true);
 
 CREATE POLICY "Admin can read all RSVP"
-  ON rsvp FOR SELECT
-  TO authenticated
+  ON rsvp FOR SELECT TO authenticated
   USING (true);
 
 CREATE POLICY "Admin can delete RSVP"
-  ON rsvp FOR DELETE
-  TO authenticated
+  ON rsvp FOR DELETE TO authenticated
   USING (true);
 
--- Wishes Policies:
+-- Wishes Policies
 CREATE POLICY "Anyone can submit wishes"
-  ON wishes FOR INSERT
-  TO anon, authenticated
+  ON wishes FOR INSERT TO anon, authenticated
   WITH CHECK (true);
 
 CREATE POLICY "Anyone can read wishes"
-  ON wishes FOR SELECT
-  TO anon, authenticated
+  ON wishes FOR SELECT TO anon, authenticated
   USING (true);
 
 CREATE POLICY "Admin can delete wishes"
-  ON wishes FOR DELETE
-  TO authenticated
+  ON wishes FOR DELETE TO authenticated
   USING (true);
 
 -- =====================================================
--- INDEXES for performance
+-- INDEXES
 -- =====================================================
 CREATE INDEX IF NOT EXISTS idx_rsvp_created_at ON rsvp (created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_rsvp_attendance ON rsvp (attendance);
