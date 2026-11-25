@@ -897,6 +897,19 @@ a {
   overflow: hidden;
 }
 
+.couple-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.couple-card:hover .couple-photo img {
+  transform: scale(1.05);
+}
+
 .photo-placeholder {
   width: 100%;
   height: 100%;
